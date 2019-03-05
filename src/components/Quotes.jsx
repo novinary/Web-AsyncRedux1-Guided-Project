@@ -3,11 +3,19 @@ import { connect } from 'react-redux';
 import { arrayOf, shape, string } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import Quote from './Quote';
-import { deleteQuote, makeQuoteOfTheDay } from '../state/actionCreators';
+import { deleteQuote, makeQuoteOfTheDay, getQuotesAsync } from '../state/actionCreators';
 
 
 export class Quotes extends React.Component {
+  componentDidMount() {
+    this.props.getQuotesAsync();
+  }
+
   render() {
+    if (this.props.spinner) {
+      return <div>Getting your quotes...</div>;
+    }
+
     return (
       <div>
         <h3>My Favorite Quotes</h3>
@@ -42,6 +50,7 @@ function mapStateToProps(state) {
   return {
     quotes: state.quotes,
     quoteOfTheDay: state.quoteOfTheDay,
+    spinner: state.spinner,
   };
 }
 
@@ -49,6 +58,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     deleteQuote,
     makeQuoteOfTheDay,
+    getQuotesAsync,
   }, dispatch);
 }
 

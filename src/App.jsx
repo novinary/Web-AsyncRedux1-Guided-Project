@@ -4,12 +4,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import Container from './components/Container';
-import { quotes, quoteOfTheDay } from './state/reducers';
+import { quotes, quoteOfTheDay, spinner } from './state/reducers';
 
 
 const rootReducer = combineReducers({
   quotes,
   quoteOfTheDay,
+  spinner,
 });
 
 const store = createStore(
