@@ -2,37 +2,37 @@
 import * as types from './actionTypes';
 
 
-export function quotes(state = [], action) {
+export function quotes(slice = [], action) {
   switch (action.type) {
     case types.ADD_QUOTES:
       return action.payload;
     case types.ADD_QUOTE:
-      return state.concat(action.payload);
+      return slice.concat(action.payload);
     case types.DELETE_QUOTE:
-      return state.filter(quote => quote.id !== action.payload);
+      return slice.filter(quote => quote.id !== action.payload);
     default:
-      return state;
+      return slice;
   }
 }
 
-export function quoteOfTheDay(state = null, action) {
+export function quoteOfTheDay(slice = null, action) {
   switch (action.type) {
     case types.MAKE_QUOTE_OF_THE_DAY:
       return action.payload;
     case types.DELETE_QUOTE:
-      return state === action.payload ? null : state;
+      return slice === action.payload ? null : slice;
     default:
-      return state;
+      return slice;
   }
 }
 
-export function spinner(state = false, action) {
+export function spinner(slice = false, action) {
   switch (action.type) {
     case types.SPINNER_ON:
       return true;
     case types.SPINNER_OFF:
       return false;
     default:
-      return state;
+      return slice;
   }
 }
