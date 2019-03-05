@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
-import { addQuote } from '../state/actionCreators';
+import { addQuote, addQuoteAsync } from '../state/actionCreators';
 
 
 export class QuoteForm extends React.Component {
@@ -14,7 +14,7 @@ export class QuoteForm extends React.Component {
     const authorInput = this.authorRef.current;
     const textInput = this.textRef.current;
 
-    this.props.addQuote(authorInput.value, textInput.value);
+    this.props.addQuoteAsync({ author: authorInput.value, text: textInput.value });
 
     authorInput.value = '';
     textInput.value = '';
@@ -54,6 +54,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addQuote,
+    addQuoteAsync,
   }, dispatch);
 }
 

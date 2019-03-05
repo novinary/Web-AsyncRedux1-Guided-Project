@@ -12,10 +12,6 @@ export class Quotes extends React.Component {
   }
 
   render() {
-    if (this.props.spinner) {
-      return <div>Getting your quotes...</div>;
-    }
-
     return (
       <div>
         <h3>My Favorite Quotes</h3>
