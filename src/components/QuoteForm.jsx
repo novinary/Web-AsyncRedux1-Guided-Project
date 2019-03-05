@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
-import { addQuote } from '../App';
+import { addQuote } from '../state/actionCreators';
 
 
 export class QuoteForm extends React.Component {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { arrayOf, shape, string } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import Quote from './Quote';
-import { deleteQuote, makeQuoteOfTheDay } from '../App';
+import { deleteQuote, makeQuoteOfTheDay } from '../state/actionCreators';
 
 
 export class Quotes extends React.Component {
