@@ -2,32 +2,32 @@
 import * as types from './actionTypes';
 
 
-export function quotes(slice = [], action) {
+export function quotes(quotesArray = [], action) {
   switch (action.type) {
     case types.ADD_QUOTES:
       // implement case
-      return slice;
+      return quotesArray;
     case types.ADD_QUOTE:
-      return slice.concat(action.payload);
+      return quotesArray.concat(action.payload);
     case types.DELETE_QUOTE:
-      return slice.filter(quote => quote.id !== action.payload);
+      return quotesArray.filter(quote => quote.id !== action.payload);
     default:
-      return slice;
+      return quotesArray;
   }
 }
 
-export function quoteOfTheDay(slice = null, action) {
+export function quoteOfTheDay(quoteId = null, action) {
   switch (action.type) {
     case types.MAKE_QUOTE_OF_THE_DAY:
       return action.payload;
     case types.DELETE_QUOTE:
-      return slice === action.payload ? null : slice;
+      return quoteId === action.payload ? null : quoteId;
     default:
-      return slice;
+      return quoteId;
   }
 }
 
-export function spinner(slice = false, action) {
+export function spinner(isOn = false, action) {
   // implement
-  return slice;
+  return isOn;
 }
