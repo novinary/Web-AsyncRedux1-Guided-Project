@@ -41,8 +41,8 @@ export class QuoteForm extends React.Component {
 }
 
 QuoteForm.propTypes = {
-  addQuote: func,
-  addQuoteAsync: func,
+  addQuote: func.isRequired,
+  addQuoteAsync: func.isRequired,
 };
 
 function mapStateToProps(state) {
