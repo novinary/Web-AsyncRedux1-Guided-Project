@@ -4,7 +4,7 @@ import * as types from './actionTypes';
 
 export function quotes(state = [], action) {
   switch (action.type) {
-    case types.GET_QUOTES:
+    case types.ADD_QUOTES:
       return action.payload;
     case types.ADD_QUOTE:
       return state.concat(action.payload);

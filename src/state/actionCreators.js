@@ -7,7 +7,7 @@ export const getQuotesAsync = () => dispatch => {
   fetch('http://gabe.mockable.io/quotes')
     .then(res => res.json())
     .then(quotes => {
-      dispatch({ type: types.GET_QUOTES, payload: quotes });
+      dispatch({ type: types.ADD_QUOTES, payload: quotes });
       dispatch({ type: types.SPINNER_OFF });
     });
 };
