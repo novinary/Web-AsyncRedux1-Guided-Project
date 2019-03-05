@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { func } from 'prop-types';
+import { func, number } from 'prop-types';
 import { addQuoteAsync } from '../state/actionCreators';
 
 
@@ -42,6 +42,9 @@ export class QuoteForm extends React.Component {
 }
 
 QuoteForm.propTypes = {
+  // data
+  numberOfQuotes: number.isRequired,
+  // action creator
   addQuoteAsync: func.isRequired,
 };
 
