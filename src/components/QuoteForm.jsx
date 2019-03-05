@@ -18,7 +18,6 @@ export class QuoteForm extends React.Component {
 
     authorInput.value = '';
     textInput.value = '';
-    authorInput.focus();
   }
 
   render() {
