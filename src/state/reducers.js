@@ -1,8 +1,8 @@
-import dummyQuotes from '../constants/dummyQuotes';
+// import dummyQuotes from '../constants/dummyQuotes';
 import * as types from './actionTypes';
 
 
-export function quotes(slice = dummyQuotes, action) {
+export function quotes(slice = [], action) {
   switch (action.type) {
     case types.ADD_QUOTES:
       // implement case
