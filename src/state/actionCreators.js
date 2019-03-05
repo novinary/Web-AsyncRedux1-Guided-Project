@@ -21,13 +21,6 @@ export function deleteQuote(id) {
   };
 }
 
-export function makeQuoteOfTheDay(id) {
-  return {
-    type: types.MAKE_QUOTE_OF_THE_DAY,
-    payload: id,
-  };
-}
-
 export function addQuote(author, text) {
   return {
     type: types.ADD_QUOTE,
@@ -36,5 +29,12 @@ export function addQuote(author, text) {
       author,
       text,
     },
+  };
+}
+
+export function makeQuoteOfTheDay(id) {
+  return {
+    type: types.MAKE_QUOTE_OF_THE_DAY,
+    payload: id,
   };
 }
