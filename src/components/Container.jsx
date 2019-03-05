@@ -7,9 +7,6 @@ import Spinner from './Spinner';
 
 const StyledContainer = styled.div`
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 export default function Container() {
