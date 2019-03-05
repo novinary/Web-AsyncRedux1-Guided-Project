@@ -19,10 +19,9 @@ export default class Quote extends React.Component {
   render() {
     const {
       quote,
-      deleteQuote,
+      isQuoteOfTheDay,
       deleteQuoteAsync,
       makeQuoteOfTheDay,
-      isQuoteOfTheDay,
     } = this.props;
 
     return (
@@ -30,8 +29,8 @@ export default class Quote extends React.Component {
         <div className='text'>{quote.text}</div>
         <em className='author'>{quote.author}</em>
         <div>
-          <button onClick={() => deleteQuoteAsync(quote.id)}>Delete</button>
-          <button onClick={() => makeQuoteOfTheDay(quote.id)}>Make Quote of the Day</button>
+          <button onClick={Function.prototype /* fix */}>Delete</button>
+          <button onClick={Function.prototype /* fix */}>Make Quote of the Day</button>
         </div>
       </StyledQuote>
     );
@@ -43,7 +42,6 @@ Quote.propTypes = {
     author: string.isRequired,
     text: string.isRequired,
   }).isRequired,
-  deleteQuote: func.isRequired,
   deleteQuoteAsync: func.isRequired,
   makeQuoteOfTheDay: func.isRequired,
   isQuoteOfTheDay: bool.isRequired,

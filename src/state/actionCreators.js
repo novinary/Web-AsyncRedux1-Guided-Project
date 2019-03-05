@@ -3,33 +3,15 @@ import * as types from './actionTypes';
 
 
 export const deleteQuoteAsync = id => dispatch => {
-  dispatch({ type: types.SPINNER_ON });
-  fetch(`http://gabe.mockable.io/quotes/${id}`, { method: 'DELETE', body: id })
-    .then(res => res.json())
-    .then(data => {
-      dispatch({ type: types.DELETE_QUOTE, payload: data.id });
-      dispatch({ type: types.SPINNER_OFF });
-    });
+// implement
 };
 
 export const getQuotesAsync = () => dispatch => {
-  dispatch({ type: types.SPINNER_ON });
-  fetch('http://gabe.mockable.io/quotes')
-    .then(res => res.json())
-    .then(quotes => {
-      dispatch({ type: types.ADD_QUOTES, payload: quotes });
-      dispatch({ type: types.SPINNER_OFF });
-    });
+// implement
 };
 
 export const addQuoteAsync = quote => dispatch => {
-  dispatch({ type: types.SPINNER_ON });
-  fetch('http://gabe.mockable.io/quotes', { method: 'POST', body: JSON.stringify(quote) })
-    .then(res => res.json())
-    .then(quote => {
-      dispatch({ type: types.ADD_QUOTE, payload: quote });
-      dispatch({ type: types.SPINNER_OFF });
-    });
+// implement
 };
 
 export function deleteQuote(id) {

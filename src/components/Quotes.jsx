@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, shape, string, bool, func } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import Quote from './Quote';
-import { deleteQuote, makeQuoteOfTheDay, getQuotesAsync, deleteQuoteAsync } from '../state/actionCreators';
 
 
 export class Quotes extends React.Component {
   componentDidMount() {
-    this.props.getQuotesAsync();
+    // Mmm. Geez I wonder what we could do here.
+    // Look at prop types for hints.
   }
 
   render() {
@@ -21,10 +21,9 @@ export class Quotes extends React.Component {
               <Quote
                 key={quote.id}
                 quote={quote}
-                deleteQuote={this.props.deleteQuote}
+                isQuoteOfTheDay={this.props.quoteOfTheDay === quote.id}
                 deleteQuoteAsync={this.props.deleteQuoteAsync}
                 makeQuoteOfTheDay={this.props.makeQuoteOfTheDay}
-                isQuoteOfTheDay={this.props.quoteOfTheDay === quote.id}
               />
             ))
           }
@@ -35,28 +34,28 @@ export class Quotes extends React.Component {
 }
 
 Quotes.propTypes = {
+  // data from store
   quotes: arrayOf(shape({
     id: string.isRequired,
     author: string.isRequired,
     text: string.isRequired,
   })).isRequired,
-  quoteOfTheDay: string,
+  quoteOfTheDay: string, // not required because `null` is legit value for this prop
+  spinner: bool.isRequired,
+  // action creators
+  getQuotesAsync: func.isRequired,
+  deleteQuoteAsync: func.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    quotes: state.quotes,
-    quoteOfTheDay: state.quoteOfTheDay,
-    spinner: state.spinner,
+    // complete using prop types as guide
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    deleteQuote,
-    makeQuoteOfTheDay,
-    getQuotesAsync,
-    deleteQuoteAsync,
+    // complete using prop types as guide
   }, dispatch);
 }
 

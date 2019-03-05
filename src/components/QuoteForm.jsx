@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
-import { addQuote, addQuoteAsync } from '../state/actionCreators';
+import { addQuoteAsync } from '../state/actionCreators';
 
 
 export class QuoteForm extends React.Component {
@@ -14,7 +14,8 @@ export class QuoteForm extends React.Component {
     const authorInput = this.authorRef.current;
     const textInput = this.textRef.current;
 
-    this.props.addQuoteAsync({ author: authorInput.value, text: textInput.value });
+    // Invoke addQuoteAsync at this point.
+    // Review its definition to know how to invoke it correctly.
 
     authorInput.value = '';
     textInput.value = '';
@@ -41,7 +42,6 @@ export class QuoteForm extends React.Component {
 }
 
 QuoteForm.propTypes = {
-  addQuote: func.isRequired,
   addQuoteAsync: func.isRequired,
 };
 
@@ -53,7 +53,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    addQuote,
     addQuoteAsync,
   }, dispatch);
 }
