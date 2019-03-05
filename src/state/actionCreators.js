@@ -2,6 +2,16 @@ import uuid from 'uuid';
 import * as types from './actionTypes';
 
 
+export const deleteQuoteAsync = id => dispatch => {
+  dispatch({ type: types.SPINNER_ON });
+  fetch(`http://gabe.mockable.io/quotes/${id}`, { method: 'DELETE', body: id })
+    .then(res => res.json())
+    .then(data => {
+      dispatch({ type: types.DELETE_QUOTE, payload: data.id });
+      dispatch({ type: types.SPINNER_OFF });
+    });
+};
+
 export const getQuotesAsync = () => dispatch => {
   dispatch({ type: types.SPINNER_ON });
   fetch('http://gabe.mockable.io/quotes')

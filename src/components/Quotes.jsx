@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { arrayOf, shape, string } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import Quote from './Quote';
-import { deleteQuote, makeQuoteOfTheDay, getQuotesAsync } from '../state/actionCreators';
+import { deleteQuote, makeQuoteOfTheDay, getQuotesAsync, deleteQuoteAsync } from '../state/actionCreators';
 
 
 export class Quotes extends React.Component {
@@ -22,6 +22,7 @@ export class Quotes extends React.Component {
                 key={quote.id}
                 quote={quote}
                 deleteQuote={this.props.deleteQuote}
+                deleteQuoteAsync={this.props.deleteQuoteAsync}
                 makeQuoteOfTheDay={this.props.makeQuoteOfTheDay}
                 isQuoteOfTheDay={this.props.quoteOfTheDay === quote.id}
               />
@@ -55,6 +56,7 @@ function mapDispatchToProps(dispatch) {
     deleteQuote,
     makeQuoteOfTheDay,
     getQuotesAsync,
+    deleteQuoteAsync,
   }, dispatch);
 }
 

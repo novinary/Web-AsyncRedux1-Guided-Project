@@ -7,11 +7,9 @@ const StyledQuote = styled.div`
   margin: 10px;
   padding: 8px;
   background-color: ${pr => (pr.highlight ? '#fffbc4' : '#f4f4f4')};
-
   .text {
     margin-bottom: 10px;
   }
-
   em {
     font-weight: bold;
   }
@@ -19,14 +17,20 @@ const StyledQuote = styled.div`
 
 export default class Quote extends React.Component {
   render() {
-    const { quote, deleteQuote, makeQuoteOfTheDay, isQuoteOfTheDay } = this.props;
+    const {
+      quote,
+      deleteQuote,
+      deleteQuoteAsync,
+      makeQuoteOfTheDay,
+      isQuoteOfTheDay,
+    } = this.props;
 
     return (
       <StyledQuote highlight={isQuoteOfTheDay}>
         <div className='text'>{quote.text}</div>
         <em className='author'>{quote.author}</em>
         <div>
-          <button onClick={() => deleteQuote(quote.id)}>Delete</button>
+          <button onClick={() => deleteQuoteAsync(quote.id)}>Delete</button>
           <button onClick={() => makeQuoteOfTheDay(quote.id)}>Make Quote of the Day</button>
         </div>
       </StyledQuote>
@@ -40,6 +44,7 @@ Quote.propTypes = {
     text: string.isRequired,
   }).isRequired,
   deleteQuote: func.isRequired,
+  deleteQuoteAsync: func.isRequired,
   makeQuoteOfTheDay: func.isRequired,
   isQuoteOfTheDay: bool.isRequired,
 };
