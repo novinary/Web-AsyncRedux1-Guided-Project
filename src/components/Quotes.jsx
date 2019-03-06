@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { arrayOf, shape, string, bool, func } from 'prop-types';
+import { arrayOf, shape, string, func } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { getQuotesAsync, deleteQuoteAsync, makeQuoteOfTheDay } from '../state/actionCreators';
 import Quote from './Quote';
