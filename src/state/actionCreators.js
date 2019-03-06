@@ -23,9 +23,14 @@ export const getQuotesAsync = () => dispatch => {
 };
 
 export const addQuoteAsync = quote => dispatch => {
-  // implement
+  dispatch(spinnerOn());
+  fetch(`http://gabe.mockable.io/quotes`, { method: 'POST', body: quote })
+    .then(res => res.json())
+    .then(quote => {
+      dispatch({ type: types.ADD_QUOTE, payload: quote });
+      dispatch(spinnerOff());
+    });
 };
-
 
 export function spinnerOn() {
   return {
