@@ -35,7 +35,7 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
         }
       ]
     ```
-  * POST /quotes endpoint, expecting this request body:
+  * POST /quotes endpoint, expecting a request body of this shape:
     ```javascript
       {
         "author": "Gabriel",
@@ -51,7 +51,7 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
       }
     ```
   * DELETE /quotes/{id}, expecting an id param of the quote to be deleted
-  * and returning an object containing the id of the deleted quote:
+  * and returning the id of the deleted quote in this form:
     ```javascript
       {
           "id": "{{id}}",
