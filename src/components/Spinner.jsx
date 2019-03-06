@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 const StyledSpinner = styled.div`
-  /* implement so spinner DISPLAYs only when it needs to */
+  /* implement so spinner and children DISPLAY when they should */
 `;
 
 // connect this component to the store, to get the "spinner" slice of state
