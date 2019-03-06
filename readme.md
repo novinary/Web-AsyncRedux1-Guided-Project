@@ -11,9 +11,7 @@
 # Requirements
 We need `node` & `npm`, as well as packages `live-server` and `eslint` installed _globally_. VSCode's `eslint` extension is recommended. Command line commands are run inside the project folder. This guide uses npm but should work the same using yarn.
 
-# Steps
-
-## Necessary enppoints
+# Necessary enppoints
   * We need working enpoints on mockable.io or similar:
   * GET /quotes endpoint, serving quotes:
     ```javascript
@@ -58,7 +56,7 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
       }
     ```
 
-## Steps
+# Steps
   * Students should test the endpoints on Postman.
   * Walk students through the structure of the project.
   * Walk students through `App.jsx` to see how `redux-thunk` is plugged in.
