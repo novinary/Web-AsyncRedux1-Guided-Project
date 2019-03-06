@@ -1,4 +1,3 @@
-// import dummyQuotes from '../constants/dummyQuotes';
 import * as types from './actionTypes';
 
 
