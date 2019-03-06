@@ -17,7 +17,7 @@ export class Quotes extends React.Component {
         <h3>My Favorite Quotes</h3>
         <div>
           {
-            this.props.quotes.map(quote => (
+            [].map(quote => (
               <Quote
                 key={quote.id}
                 quote={quote}
