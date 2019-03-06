@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { arrayOf, shape, string, bool, func } from 'prop-types';
 import { bindActionCreators } from 'redux';
+import { getQuotesAsync, deleteQuoteAsync, makeQuoteOfTheDay } from '../state/actionCreators';
 import Quote from './Quote';
 
 
 export class Quotes extends React.Component {
   componentDidMount() {
+    this.props.getQuotesAsync();
     // Mmm. Geez I wonder what we could do here.
     // Look at prop types for hints.
   }
@@ -17,7 +19,7 @@ export class Quotes extends React.Component {
         <h3>My Favorite Quotes</h3>
         <div>
           {
-            [].map(quote => (
+            this.props.quotes.map(quote => (
               <Quote
                 key={quote.id}
                 quote={quote}
@@ -41,21 +43,24 @@ Quotes.propTypes = {
     text: string.isRequired,
   })).isRequired,
   quoteOfTheDay: string, // not required because `null` is legit value for this prop
-  spinner: bool.isRequired,
   // action creators
   getQuotesAsync: func.isRequired,
   deleteQuoteAsync: func.isRequired,
+  makeQuoteOfTheDay: func.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    // complete using prop types as guide
+    quotes: state.quotes,
+    quoteOfTheDay: state.quoteOfTheDay,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    // complete using prop types as guide
+    getQuotesAsync,
+    deleteQuoteAsync,
+    makeQuoteOfTheDay,
   }, dispatch);
 }
 
