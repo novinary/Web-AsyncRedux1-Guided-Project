@@ -13,8 +13,7 @@ export class QuoteForm extends React.Component {
   onAddQuote = () => {
     const authorInput = this.authorRef.current;
     const textInput = this.textRef.current;
-    // Invoke addQuoteAsync at this point.
-    // Review its definition to know how to invoke it correctly.
+
     const newQuote = {
       author: authorInput.value,
       text: textInput.value,
