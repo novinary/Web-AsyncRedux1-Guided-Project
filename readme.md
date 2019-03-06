@@ -67,3 +67,7 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
   * Have students include the new reducer in the redux store.
   * Ask students to fix the `Spinner` component (needs CSS and connecting to the store).
   * Get to work on the async action creators.
+  * Fix `Quotes.jsx`.
+  * Fix `Quote.jsx`.
+  * Fix `QuoteForm.jsx`.
+  * Demonstrate `redux-form`.
