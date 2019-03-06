@@ -3,16 +3,41 @@ import * as types from './actionTypes';
 
 
 export const deleteQuoteAsync = id => dispatch => {
-// implement
+  dispatch(spinnerOn());
+  fetch(`http://gabe.mockable.io/quotes/${id}`, { method: 'DELETE' })
+    .then(res => res.json())
+    .then(data => {
+      dispatch(deleteQuote(data.id));
+      dispatch(spinnerOff());
+    });
 };
 
 export const getQuotesAsync = () => dispatch => {
-// implement
+  dispatch(spinnerOn());
+  fetch('http://gabe.mockable.io/quotes')
+    .then(res => res.json())
+    .then(quotes => {
+      dispatch({ type: types.ADD_QUOTES, payload: quotes });
+      dispatch(spinnerOff());
+    });
 };
 
 export const addQuoteAsync = quote => dispatch => {
-// implement
+  // implement
 };
+
+
+export function spinnerOn() {
+  return {
+    type: types.SPINNER_ON,
+  };
+}
+
+export function spinnerOff() {
+  return {
+    type: types.SPINNER_OFF,
+  };
+}
 
 export function deleteQuote(id) {
   return {
