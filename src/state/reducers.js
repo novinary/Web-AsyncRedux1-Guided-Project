@@ -4,8 +4,7 @@ import * as types from './actionTypes';
 export function quotes(quotesArray = [], action) {
   switch (action.type) {
     case types.ADD_QUOTES:
-      // implement case
-      return quotesArray;
+      return action.payload;
     case types.ADD_QUOTE:
       return quotesArray.concat(action.payload);
     case types.DELETE_QUOTE:
