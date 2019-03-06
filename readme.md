@@ -64,6 +64,7 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
   * Have students build a reducer for `spinner` slice of state.
   * Have students include the new reducer in the redux store.
   * Ask students to fix the `Spinner` component (needs CSS and connecting to the store).
+  * Demonstrate [GET]ing quotes and handling the data with "normal" action creators.
   * Get to work on the async action creators.
   * Fix `Quotes.jsx`.
   * Fix `Quote.jsx`.
