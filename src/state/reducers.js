@@ -26,7 +26,7 @@ export function quoteOfTheDay(quoteId = null, action) {
   }
 }
 
-export function spinner(isOn = false, action) {
+export function spinner(state = false, action) {
   // implement
   switch (action.type) {
     case types.SPINNER_ON:
