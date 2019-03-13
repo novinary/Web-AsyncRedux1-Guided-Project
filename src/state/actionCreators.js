@@ -8,6 +8,7 @@ export const deleteQuoteAsync = id => dispatch => {
 
 export const getQuotesAsync = () => dispatch => {
 // implement
+// dispatch takes an object with a type so SPINNER_ON
 };
 
 export const addQuoteAsync = quote => dispatch => {
